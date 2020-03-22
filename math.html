@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+<body>
+   <h2>简单计算器</h2>
+    <div  id="app"> 
+        数值A： <input type="number" v-model.number="num1"/> <br> 
+       
+        数值B： <input type="number" v-model.number="num2"/> <br>
+       <br>
+        <button @click='cal'>计算<button> &nbsp;&nbsp;
+        <select v-model.number="operater">
+            <option value="0">+</option>
+            <option value="1">-</option>
+            <option value="2">*</option>
+            <option value="3">/</option>
+        <lect>
+        <br>
+        <p>结果 :  &nbsp;&nbsp; <input type="text" v-model.number="res"/> <br></p>
+    </div>   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script type="text/javascript">
+    var app=new Vue({
+        el:'#app',
+        data:{
+            num1:0,
+            num2:0,
+            operater:0,
+            res:0
+        },
+        methods:{
+                    cal(){
+                            switch(this.operater){
+                                case 0:
+                                this.res=this.num1+this.num2;
+                                break;
+                                case 1:
+                                this.res=this.num1-this.num2;
+                                break;
+                                case 2:
+                                this.res=this.num1*this.num2;
+                                break;
+                                case 3:
+                                this.res=this.num1/this.num2;
+                                break;
+                            }
+                    }
+                }
+    })
+</script>
+</body>
+<ml>

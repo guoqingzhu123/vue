@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/img.css">
+</head>
+<body>
+    <div id="app">
+        <div class="center">
+          <!--图片-->
+          <img :src="imgs[index]" alt=""> 
+          <!--左箭头-->
+          <a href="JavaScript:void(0)" class="left" @click="prev" >
+            <img src="./img/prev.png" alt="" >
+          </a>
+          <!--右箭头-->
+          <a href="JavaScript:void(0)" class="right"@click="next" >
+            <img src="./img/next.png" alt="" >
+          </a>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script>
+          const app = new Vue({
+              el: "#app",
+              data: {
+                  imgs: [
+                  './img/1.jpg',
+                  './img/2.jpg',
+                  './img/3.jpg',
+                  './img/4.jpg',
+                  './img/5.jpg',
+                  ],
+                  index: 0
+              },
+
+              methods: {
+                  prev(){
+                        this.index--;
+                  },
+                  next(){
+                        this.index++;
+                  }
+              }
+          })
+      </script>
+</body>
+</html>

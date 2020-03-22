@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="input-num">
+            <button v-on:click="sub">-</button>
+            <span v-text="num"></span>
+            <button v-on:click="add">+</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            methods: {
+                add(){
+                    if(this.num <10){
+                        this.num++;
+                    }else{
+                        alert("已经是最大数值了")
+                    }
+                },
+                sub(){
+                    if(this.num >1){
+                        this.num--;
+                    }else{
+                        alert("已经是最小数值了")
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
