@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <fruit-list :list='list'>
+            <template slot-scope="slotProps">
+                <strong v-if='slotProps.info.id==2' class="current">
+                    {{slotProps.info.name}}
+                </strong>
+                <span v-else>{{slotProps.info.name}}</span>
+            </template>
+        </fruit-list>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('base-layout',{
+            template:
+            <div class="container">
+            <header>
+            <slot name="header"></slot>
+            <mian>
+            <slot></slot>
+            </mian>
+            <footer>
+            <slot name="footer"></slot>
+            </footer>
+            </header>
+            </div>
+        })
+    </script>
+</body>
+</html>
